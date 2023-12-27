@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-// import Todo from "./Components/Todo";
+import Todo from "./Components/Todo";
 import { Route, Routes } from "react-router-dom";
 import Counter from "./Components/Counter";
 import Home from "./Pages/Home";
@@ -11,16 +11,16 @@ import Users from "./Components/Users";
 function App() {
   return (
     <Container>
-      <Users />
-      {/* <Header />
+      {/* <Users /> */}
+      <Header />
       <h1>Hammaga Salom!</h1>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/todo" element={<Todo />} />
       </Routes>
 
-      <Counter /> */}
-      {/* <Todo /> */}
+      {/* <Counter /> */}
     </Container>
   );
 }

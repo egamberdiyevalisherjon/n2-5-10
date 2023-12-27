@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
 const Todo = () => {
   const [todos, setTodos] = useState([]);
+
+  const inputRef = useRef();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -14,6 +16,7 @@ const Todo = () => {
     setTodos((prevTodos) => [...prevTodos, data]);
 
     e.target.reset();
+    inputRef.current.focus();
   }
 
   function toggleTodoCompleted(id) {
@@ -51,6 +54,7 @@ const Todo = () => {
               type="text"
               className="form-control"
               placeholder="Take out the trash"
+              ref={inputRef}
             />
             <button className="btn btn-success px-5">Add</button>
           </div>

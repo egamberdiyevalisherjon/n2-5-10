@@ -1,4 +1,5 @@
 import { useEffect, memo, useState } from "react";
+import useFetch from '../hooks/useFetch';
 
 const Home = () => {
   const [users, loading, isError, error] = useFetch("/users");
