@@ -1,26 +1,33 @@
 import { useEffect, memo, useState } from "react";
-import axios from "axios";
 
 const Home = () => {
-  const [users, setUsers] = useState([]);
+  const [users, loading, isError, error] = useFetch("/users");
 
-  useEffect(() => {
-    let isUnmounted = false;
-    const wait = (delay) => new Promise((res) => setTimeout(res, delay));
+  if (isError) console.log(error);
 
-    (async function () {
-      const { data } = await axios.get("/users");
-      await wait(5000);
-      if (isUnmounted) return;
-      setUsers((prevUsers) => [...prevUsers, ...data]);
-    })();
+  // const [users, setUsers] = useState([]);
 
-    return () => {
-      isUnmounted = true;
-    };
-  }, [setUsers]);
+  // useEffect(() => {
+  //   let isUnmounted = false;
+  //   const wait = (delay) => new Promise((res) => setTimeout(res, delay));
 
-  return (
+  //   (async function () {
+  //     const { data } = await axios.get("/users");
+  //     await wait(5000);
+  //     if (isUnmounted) return;
+  //     setUsers((prevUsers) => [...prevUsers, ...data]);
+  //   })();
+
+  //   return () => {
+  //     isUnmounted = true;
+  //   };
+  // }, [setUsers]);
+
+  return isError ? (
+    <h1>An error occurred. Look at the console</h1>
+  ) : loading ? (
+    <h1>Loading...</h1>
+  ) : (
     <div>
       Home
       <ul>

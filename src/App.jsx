@@ -1,22 +1,22 @@
 import { Container } from "react-bootstrap";
-import Todo from "./Components/Todo";
-// import { Route, Routes } from "react-router-dom";
+// import Todo from "./Components/Todo";
+import { Route, Routes } from "react-router-dom";
 import Counter from "./Components/Counter";
-// import Home from "./Pages/Home";
-// import About from "./Pages/About";
-// import Header from "./Components/Header";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Header from "./Components/Header";
 // import { useState } from "react";
 
 function App() {
   return (
     <Container>
-      {/* <Header />
+      <Header />
       <h1>Hammaga Salom!</h1>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
       </Routes>
-      */}
+
       <Counter />
       {/* <Todo /> */}
     </Container>
