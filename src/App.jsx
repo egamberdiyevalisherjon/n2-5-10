@@ -7,6 +7,8 @@ import About from "./Pages/About";
 import Header from "./Components/Header";
 import Users from "./Components/Users";
 // import { useState } from "react";
+import Products from "./Pages/Products";
+import Details from "./Pages/Details";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/todo" element={<Todo />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/product-detail/:id" element={<Details />} />
       </Routes>
 
       {/* <Counter /> */}

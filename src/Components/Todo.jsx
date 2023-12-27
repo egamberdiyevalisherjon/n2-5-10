@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Todo = () => {
   const [todos, setTodos] = useState([]);
+  const navigate = useNavigate();
 
   const inputRef = useRef();
 
@@ -17,6 +19,7 @@ const Todo = () => {
 
     e.target.reset();
     inputRef.current.focus();
+    navigate("/");
   }
 
   function toggleTodoCompleted(id) {
